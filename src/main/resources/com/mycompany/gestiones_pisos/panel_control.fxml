@@ -44,6 +44,9 @@
                      <GridPane.margin>
                         <Insets left="35.0" />
                      </GridPane.margin></Button>
+                  <Label text="GENERAR TODOS LOS PAGOS DEL MES" GridPane.columnIndex="1" />
+                  <Label text="INGRESOS" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="HIPOTECAS" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>
