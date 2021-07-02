@@ -8,11 +8,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="764.0" style="-fx-background-color: #1C2833;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="764.0" style="-fx-background-color: #1C2833;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestiones_pisos.Insert_propController">
    <children>
       <AnchorPane layoutX="89.0" prefHeight="531.0" prefWidth="611.0" style="-fx-background-color: #fff;">
          <children>
-            <Button fx:id="insertar_prop" layoutX="229.0" layoutY="482.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="168.0" text="Insertar propietario" />
+            <Button layoutX="229.0" layoutY="482.0" mnemonicParsing="false" onAction="#insertar" prefHeight="47.0" prefWidth="168.0" text="Insertar propietario" />
             <GridPane prefHeight="482.0" prefWidth="625.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="201.0" />
