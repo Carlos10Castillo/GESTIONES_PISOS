@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="764.0" style="-fx-background-color: #1C2833;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestiones_pisos.Insert_propController">
    <children>
-      <AnchorPane layoutX="89.0" prefHeight="531.0" prefWidth="611.0" style="-fx-background-color: #fff;">
+      <AnchorPane layoutX="325.0" layoutY="60.0" prefHeight="531.0" prefWidth="611.0" style="-fx-background-color: #fff;">
          <children>
             <Button layoutX="229.0" layoutY="482.0" mnemonicParsing="false" onAction="#insertar" prefHeight="47.0" prefWidth="168.0" text="Insertar propietario" />
             <GridPane prefHeight="482.0" prefWidth="625.0">
