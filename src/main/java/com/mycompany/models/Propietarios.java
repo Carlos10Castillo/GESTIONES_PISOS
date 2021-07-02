@@ -15,7 +15,7 @@ public class Propietarios {
     private String apellidos_prop;
     private String cif_prop;
     private String domicilio_prop;
-    private int ciudad_prop;
+    private String ciudad_prop;
     private int cod_postal_prop;
     private int telf_trab_prop;
     private int telf_part_prop;
@@ -23,6 +23,25 @@ public class Propietarios {
     private int num_fax_prop;
     private String email_trab_prop;
     private String email_pers_prop;
+
+    public Propietarios() {
+    }
+
+    public Propietarios(int idpropietario, String nombre_prop, String apellidos_prop, String cif_prop, String domicilio_prop, String ciudad_prop, int cod_postal_prop, int telf_trab_prop, int telf_part_prop, int telf_movil_prop, int num_fax_prop, String email_trab_prop, String email_pers_prop) {
+        this.idpropietario = idpropietario;
+        this.nombre_prop = nombre_prop;
+        this.apellidos_prop = apellidos_prop;
+        this.cif_prop = cif_prop;
+        this.domicilio_prop = domicilio_prop;
+        this.ciudad_prop = ciudad_prop;
+        this.cod_postal_prop = cod_postal_prop;
+        this.telf_trab_prop = telf_trab_prop;
+        this.telf_part_prop = telf_part_prop;
+        this.telf_movil_prop = telf_movil_prop;
+        this.num_fax_prop = num_fax_prop;
+        this.email_trab_prop = email_trab_prop;
+        this.email_pers_prop = email_pers_prop;
+    }
 
     /**
      * @return the idpropietario
@@ -61,7 +80,7 @@ public class Propietarios {
     /**
      * @return the ciudad_prop
      */
-    public int getCiudad_prop() {
+    public String getCiudad_prop() {
         return ciudad_prop;
     }
 
@@ -152,7 +171,7 @@ public class Propietarios {
     /**
      * @param ciudad_prop the ciudad_prop to set
      */
-    public void setCiudad_prop(int ciudad_prop) {
+    public void setCiudad_prop(String ciudad_prop) {
         this.ciudad_prop = ciudad_prop;
     }
 
