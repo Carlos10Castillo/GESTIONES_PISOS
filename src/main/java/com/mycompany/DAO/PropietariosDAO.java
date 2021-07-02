@@ -17,22 +17,23 @@ import java.sql.SQLException;
  */
 public class PropietariosDAO {
     public void insertar(Propietarios prop, Connection conexion) throws SQLException, ClassNotFoundException, IOException{
-        String sql = "INSERT INTO gestiones_pisos.propietarios (NOMBRE, APELLIDOS, DOMICILIO, CIUDAD, CODIGO_POSTAL,"
+        String sql = "INSERT INTO GESTIONES_PISOS.PROPIETARIOS (NOMBRE, APELLIDOS, CIF, DOMICILIO, CIUDAD, CODIGO_POSTAL,"
                 + " TELEFONODELTRABAJO, TELEFONOPARTICULAR,"
-                + " TELEFONOMOVIL, NUMERODEFAX, EMAIL_TRABAJO, EMAIL_PERSONAL) values (?,?,?,?,?,?,?,?,?,?,?)";
+                + " TELEFONOMOVIL, NUMERODEFAX, EMAIL_TRABAJO, EMAIL_PERSONAL) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setString(1, prop.getNombre_prop());
         sentencia.setString(2, prop.getApellidos_prop());
-        sentencia.setString(3, prop.getDomicilio_prop());
-        sentencia.setInt(4, prop.getCiudad_prop());
-        sentencia.setInt(5, prop.getCod_postal_prop());
-        sentencia.setInt(6, prop.getTelf_trab_prop());
-        sentencia.setInt(7, prop.getTelf_part_prop());
-        sentencia.setInt(8, prop.getTelf_movil_prop());
-        sentencia.setInt(9, prop.getNum_fax_prop());
-        sentencia.setString(10, prop.getEmail_trab_prop());
-        sentencia.setString(11, prop.getEmail_pers_prop());
+        sentencia.setString(3, prop.getCif_prop());
+        sentencia.setString(4, prop.getDomicilio_prop());
+        sentencia.setString(5, prop.getCiudad_prop());
+        sentencia.setInt(6, prop.getCod_postal_prop());
+        sentencia.setInt(7, prop.getTelf_trab_prop());
+        sentencia.setInt(8, prop.getTelf_part_prop());
+        sentencia.setInt(9, prop.getTelf_movil_prop());
+        sentencia.setInt(10, prop.getNum_fax_prop());
+        sentencia.setString(11, prop.getEmail_trab_prop());
+        sentencia.setString(12, prop.getEmail_pers_prop());
         sentencia.executeUpdate();
     }
 }
