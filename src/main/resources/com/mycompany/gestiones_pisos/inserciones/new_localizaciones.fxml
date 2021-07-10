@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="467.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestiones_pisos.LocalizacionesController">
+   <children>
+      <Label alignment="CENTER" prefHeight="47.0" prefWidth="515.0" style="-fx-background-color: AED6F1;" text="Localizaciones">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="80.0" text="Pais">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="249.0" layoutY="80.0" text="Comunidad Autonoma Region">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="78.0" layoutY="251.0" text="Provincia">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="314.0" layoutY="251.0" text="Nueva Ciudad">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="listado_pais" layoutX="39.0" layoutY="107.0" onAction="#selectpais" prefWidth="150.0" />
+      <ComboBox fx:id="listado_region" layoutX="295.0" layoutY="107.0" onAction="#selectregion" prefWidth="150.0" />
+      <ComboBox fx:id="listado_provincia" layoutX="39.0" layoutY="278.0" onAction="#selectprovincia" prefWidth="150.0" />
+      <Button layoutX="77.0" layoutY="154.0" mnemonicParsing="false" onAction="#new_pais" text="Nuevo Pais" />
+      <Button layoutX="325.0" layoutY="154.0" mnemonicParsing="false" onAction="#new_region" text="Nueva Region" />
+      <Button layoutX="64.0" layoutY="324.0" mnemonicParsing="false" onAction="#new_provincia" text="Nueva Provincia" />
+      <Button fx:id="guardar" layoutX="341.0" layoutY="324.0" mnemonicParsing="false" onAction="#guardar_ciudad" text="Guardar" />
+      <TextField fx:id="fieldciudad" layoutX="296.0" layoutY="278.0" />
+   </children>
+</AnchorPane>

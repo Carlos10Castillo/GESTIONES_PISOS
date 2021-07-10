@@ -9,7 +9,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1275.0" style="-fx-background-color: #1C2833;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1275.0" style="-fx-background-color: #1C2833;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestiones_pisos.Panel_controlController">
    <children>
       <AnchorPane layoutX="335.0" layoutY="70.0" prefHeight="434.0" prefWidth="606.0" style="-fx-background-color: #CCD1D1;">
          <children>
@@ -40,13 +40,14 @@
                      <GridPane.margin>
                         <Insets left="35.0" />
                      </GridPane.margin></Button>
-                  <Button mnemonicParsing="false" text="  " GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#propietarios" text="  " GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets left="35.0" />
                      </GridPane.margin></Button>
                   <Label text="GENERAR TODOS LOS PAGOS DEL MES" GridPane.columnIndex="1" />
                   <Label text="INGRESOS" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label text="HIPOTECAS" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="PROPIETARIOS" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
          </children>

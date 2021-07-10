@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.gestiones_pisos;
-
-
+package com.mycompany.DAO;
 
 /**
- * FXML Controller class
+ *
  * @author CARLOS
  */
-public class LocalidadesController{
-
+public class Gastos_periodicosDAO {
+    
 }

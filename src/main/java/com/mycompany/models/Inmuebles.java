@@ -17,20 +17,20 @@ public class Inmuebles {
     private int ciudad;
     private int cod_postal;
     private String alias;
-    private int porcentaje;
     private String ref_catastral;
     private String reg_propiedad;
     private String tomo;
     private String libro;
     private String folio;
     private String finca;
+    private String inspeccion;
     private int porcentaje_comu;
     private int porcentaje_comu_general;
 
     public Inmuebles() {
     }
 
-    public Inmuebles(int id_inmueble, int inmueble_tipo_id, String destino, String domicilio, int ciudad, int cod_postal, String alias, int porcentaje, String ref_catastral, String reg_propiedad, String tomo, String libro, String folio, String finca, int porcentaje_comu, int porcentaje_comu_general) {
+    public Inmuebles(int id_inmueble, int inmueble_tipo_id, String destino, String domicilio, int ciudad, int cod_postal, String alias, String ref_catastral, String reg_propiedad, String tomo, String libro, String folio, String finca, String inspeccion, int porcentaje_comu, int porcentaje_comu_general) {
         this.id_inmueble = id_inmueble;
         this.inmueble_tipo_id = inmueble_tipo_id;
         this.destino = destino;
@@ -38,13 +38,13 @@ public class Inmuebles {
         this.ciudad = ciudad;
         this.cod_postal = cod_postal;
         this.alias = alias;
-        this.porcentaje = porcentaje;
         this.ref_catastral = ref_catastral;
         this.reg_propiedad = reg_propiedad;
         this.tomo = tomo;
         this.libro = libro;
         this.folio = folio;
         this.finca = finca;
+        this.inspeccion = inspeccion;
         this.porcentaje_comu = porcentaje_comu;
         this.porcentaje_comu_general = porcentaje_comu_general;
     }
@@ -100,13 +100,6 @@ public class Inmuebles {
     }
 
     /**
-     * @return the porcentaje
-     */
-    public int getPorcentaje() {
-        return porcentaje;
-    }
-
-    /**
      * @return the ref_catastral
      */
     public String getRef_catastral() {
@@ -146,6 +139,13 @@ public class Inmuebles {
      */
     public String getFinca() {
         return finca;
+    }
+    
+    /**
+     * @return the inspeccion
+     */
+    public String getInspeccion() {
+        return inspeccion;
     }
 
     /**
@@ -211,12 +211,6 @@ public class Inmuebles {
         this.alias = alias;
     }
 
-    /**
-     * @param porcentaje the porcentaje to set
-     */
-    public void setPorcentaje(int porcentaje) {
-        this.porcentaje = porcentaje;
-    }
 
     /**
      * @param ref_catastral the ref_catastral to set
@@ -259,6 +253,13 @@ public class Inmuebles {
     public void setFinca(String finca) {
         this.finca = finca;
     }
+    
+    /**
+     * @param inspeccion the inspeccion to set
+     */
+    public void setInspeccion(String inspeccion) {
+        this.inspeccion = inspeccion;
+    }
 
     /**
      * @param porcentaje_comu the porcentaje_comu to set
@@ -277,23 +278,14 @@ public class Inmuebles {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Inmuebles{id_inmueble=").append(id_inmueble);
-        sb.append(", inmueble_tipo_id=").append(inmueble_tipo_id);
-        sb.append(", destino=").append(destino);
-        sb.append(", domicilio=").append(domicilio);
-        sb.append(", ciudad=").append(ciudad);
-        sb.append(", cod_postal=").append(cod_postal);
-        sb.append(", alias=").append(alias);
-        sb.append(", porcentaje=").append(porcentaje);
-        sb.append(", ref_catastral=").append(ref_catastral);
-        sb.append(", reg_propiedad=").append(reg_propiedad);
-        sb.append(", tomo=").append(tomo);
-        sb.append(", libro=").append(libro);
-        sb.append(", folio=").append(folio);
-        sb.append(", finca=").append(finca);
-        sb.append(", porcentaje_comu=").append(porcentaje_comu);
-        sb.append(", porcentaje_comu_general=").append(porcentaje_comu_general);
-        sb.append('}');
+        sb.append("destino=").append(destino);
+        sb.append(" domicilio=").append(domicilio);
+        sb.append(" ciudad=").append(ciudad);
+        sb.append(" alias=").append(alias);
         return sb.toString();
     }
+
+    
+    
+    
 }

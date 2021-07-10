@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1019.0" prefWidth="1928.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TabPane prefHeight="932.0" prefWidth="1976.0" style="-fx-font-size: 18;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Inmuebles">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="479.0" prefWidth="476.0">
+                     <children>
+                        <BorderPane layoutX="-3.0" layoutY="-7.0" prefHeight="883.0" prefWidth="1932.0">
+                           <left>
+                              <ListView fx:id="lista_inmuebles" onMouseClicked="#seleccion_inmu" prefHeight="144.0" prefWidth="340.0" BorderPane.alignment="CENTER" />
+                           </left>
+                           <center>
+                              <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="869.0" prefWidth="1592.0" BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="201.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="846.0" minWidth="10.0" prefWidth="524.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1018.0" minWidth="10.0" prefWidth="342.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="718.0" minWidth="0.0" prefWidth="522.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="82.33334350585938" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Label" />
+                                    <Label text="Tipo del inmueble" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Destino del inmueble" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Domicilio" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Ciudad" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Codigo Postal" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Alias del Inmueble" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="83.0" prefWidth="938.0" style="-fx-background-color: AED6F1;" text="REGISTRO DE LA PROPIEDAD" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    <Label text="Referencia Catastral" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Label text="Registro de la Propiedad" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <Label text="Tomo" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                    <Label text="Libro" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                    <Label text="Folio" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                    <Label text="Finca" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                    <Label alignment="CENTER" prefHeight="83.0" prefWidth="1639.0" style="-fx-background-color: AED6F1;" text="DATOS DEL INMUEBLE" GridPane.columnSpan="2" />
+                                    <Label text="Inspeccion" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                    <Label text="Porcentaje de la Comunidad" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                    <Label text="Porcentaje de la Comunidad General" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                    <TextField fx:id="destino_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="domicilio_imnu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="codposta_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="alias_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <TextField fx:id="refcatast_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <TextField fx:id="regpropiedad_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                    <TextField fx:id="tomo_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <TextField fx:id="libro_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                    <TextField fx:id="folio_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                    <TextField fx:id="finca_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                    <TextField fx:id="inspeccion_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                    <TextField fx:id="porcencomu_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                    <TextField fx:id="porcencomugeneral_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="498.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                       <children>
+                                          <TextField fx:id="ciudad_inmu" editable="false" prefHeight="39.0" prefWidth="498.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <TextField fx:id="tipo_inmu" editable="false" prefHeight="39.0" prefWidth="498.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="398.0" prefWidth="536.0" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#newInmuebles" prefHeight="39.0" prefWidth="121.0" text="Nuevo" />
+                                          <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Modificar">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Borrar">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#relInmuebles" prefHeight="39.0" prefWidth="121.0" text="Relaciones">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Datos Personales">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="874.0" prefWidth="1929.0" style="-fx-background-color: E7E7E7;">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="NOMBRE" GridPane.halignment="RIGHT">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="EMAIL PERSONAL" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="EMAIL TRABAJO" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="NUMERO DE FAX" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="nompro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="apepro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="cifpro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="dompro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="codpro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="telftrabpro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="3" />
+                              <TextField fx:id="telfpartpro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextField fx:id="telfmovilpro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <TextField fx:id="numfaxpro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <TextField fx:id="emailtrabpro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <TextField fx:id="emailperspro" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="47.0" prefWidth="205.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="TELEFONO MOVIL" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="TELEFONO PARTICULAR" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="TELEFONO DEL TRABAJO" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="CODIGO POSTAL" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="CIUDAD" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="DOMICILIO" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="CIF" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="APELLIDOS" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#insertar" prefHeight="39.0" prefWidth="223.0" text="Insertar " GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <TextField fx:id="ciudad_prop" prefHeight="39.0" prefWidth="205.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="10.0" prefWidth="157.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="465.0" minWidth="10.0" prefWidth="295.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="398.0" minWidth="10.0" prefWidth="151.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" prefWidth="351.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab text="Inquilinos">
+               <content>
+                  <AnchorPane prefHeight="857.0" prefWidth="1928.0">
+                     <children>
+                        <BorderPane layoutX="-1.0" layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="873.0" prefWidth="1929.0">
+                           <top>
+                              <ComboBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Seleccion Inquilino" BorderPane.alignment="CENTER" />
+                           </top>
+                           <center>
+                              <ListView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="78.0" prefWidth="1174.0" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Gastos">
+               <content>
+                  <AnchorPane prefHeight="998.0" prefWidth="1794.0">
+                     <children>
+                        <ListView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="873.0" prefWidth="1928.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Alquileres">
+               <content>
+                  <AnchorPane prefHeight="998.0" prefWidth="1794.0">
+                     <children>
+                        <ListView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="873.0" prefWidth="1928.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="100.0" prefWidth="498.0" style="-fx-background-color: AED6F1;" text="PROPIETARIO:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="1430.0" style="-fx-background-color: AED6F1;">
+               <children>
+                  <ComboBox fx:id="listaprop" onAction="#seleccion_prop" prefHeight="55.0" prefWidth="476.0" promptText="SELECCIONE" visibleRowCount="10000">
+                     <HBox.margin>
+                        <Insets top="23.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

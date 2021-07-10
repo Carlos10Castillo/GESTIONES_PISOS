@@ -5,6 +5,10 @@
  */
 package com.mycompany.gestiones_pisos;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import javafx.fxml.FXML;
+
 
 /**
  * FXML Controller class
@@ -13,5 +17,8 @@ package com.mycompany.gestiones_pisos;
  */
 public class Panel_controlController{
 
-
+    @FXML
+    private void propietarios() throws IOException, SQLException{
+        App.loadiniciarlistados();
+    }
 }

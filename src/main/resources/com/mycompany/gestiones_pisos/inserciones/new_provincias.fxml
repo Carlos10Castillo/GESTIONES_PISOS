@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="332.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestiones_pisos.ProvinciaController">
+   <children>
+      <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="509.0" style="-fx-background-color: AED6F1;" text="Nuevas Provincias">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="170.0" layoutY="49.0" text="Seleccione el Pais: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="listapais_newprovincia" layoutX="34.0" layoutY="76.0" onAction="#selectpais" prefHeight="25.0" prefWidth="442.0" promptText="Selecciona" />
+      <Label layoutX="158.0" layoutY="126.0" text="Seleccione la Region: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="listaregion_newprovincia" layoutX="34.0" layoutY="173.0" onAction="#selectregion" prefHeight="25.0" prefWidth="442.0" promptText="Selecciona" />
+      <Label layoutX="118.0" layoutY="212.0" text="Introduzca una nueva Provincia:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="newfieldprovincia" layoutX="34.0" layoutY="250.0" prefHeight="25.0" prefWidth="442.0" />
+      <Button fx:id="guardar" layoutX="215.0" layoutY="286.0" mnemonicParsing="false" onAction="#guardar_provincia" text="Guardar" />
+   </children>
+</AnchorPane>

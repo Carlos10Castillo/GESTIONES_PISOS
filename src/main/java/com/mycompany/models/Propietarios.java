@@ -15,7 +15,7 @@ public class Propietarios {
     private String apellidos_prop;
     private String cif_prop;
     private String domicilio_prop;
-    private String ciudad_prop;
+    private int ciudad_prop;
     private int cod_postal_prop;
     private int telf_trab_prop;
     private int telf_part_prop;
@@ -27,7 +27,7 @@ public class Propietarios {
     public Propietarios() {
     }
 
-    public Propietarios(int idpropietario, String nombre_prop, String apellidos_prop, String cif_prop, String domicilio_prop, String ciudad_prop, int cod_postal_prop, int telf_trab_prop, int telf_part_prop, int telf_movil_prop, int num_fax_prop, String email_trab_prop, String email_pers_prop) {
+    public Propietarios(int idpropietario, String nombre_prop, String apellidos_prop, String cif_prop, String domicilio_prop, int ciudad_prop, int cod_postal_prop, int telf_trab_prop, int telf_part_prop, int telf_movil_prop, int num_fax_prop, String email_trab_prop, String email_pers_prop) {
         this.idpropietario = idpropietario;
         this.nombre_prop = nombre_prop;
         this.apellidos_prop = apellidos_prop;
@@ -80,7 +80,7 @@ public class Propietarios {
     /**
      * @return the ciudad_prop
      */
-    public String getCiudad_prop() {
+    public int getCiudad_prop() {
         return ciudad_prop;
     }
 
@@ -171,7 +171,7 @@ public class Propietarios {
     /**
      * @param ciudad_prop the ciudad_prop to set
      */
-    public void setCiudad_prop(String ciudad_prop) {
+    public void setCiudad_prop(int ciudad_prop) {
         this.ciudad_prop = ciudad_prop;
     }
 
@@ -227,19 +227,9 @@ public class Propietarios {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Propietarios{nombre_prop=").append(nombre_prop);
-        sb.append(", apellidos_prop=").append(apellidos_prop);
-        sb.append(", cif_prop=").append(cif_prop);
-        sb.append(", domicilio_prop=").append(domicilio_prop);
-        sb.append(", ciudad_prop=").append(ciudad_prop);
-        sb.append(", cod_postal_prop=").append(cod_postal_prop);
-        sb.append(", telf_trab_prop=").append(telf_trab_prop);
-        sb.append(", telf_part_prop=").append(telf_part_prop);
-        sb.append(", telf_movil_prop=").append(telf_movil_prop);
-        sb.append(", num_fax_prop=").append(num_fax_prop);
-        sb.append(", email_trab_prop=").append(email_trab_prop);
-        sb.append(", email_pers_prop=").append(email_pers_prop);
-        sb.append('}');
+        sb.append("").append(nombre_prop);
+        sb.append(" ").append(apellidos_prop);
+        sb.append(" ").append(cif_prop);
         return sb.toString();
     }
     

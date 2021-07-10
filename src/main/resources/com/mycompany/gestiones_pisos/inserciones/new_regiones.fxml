@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="265.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestiones_pisos.RegionController">
+   <children>
+      <Label alignment="CENTER" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="509.0" style="-fx-background-color: AED6F1;" text="Nuevas Regiones">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="newfieldregione" layoutX="34.0" layoutY="169.0" prefHeight="25.0" prefWidth="442.0" />
+      <Button fx:id="guardar" layoutX="217.0" layoutY="214.0" mnemonicParsing="false" onAction="#guardar_regiones" text="Guardar" />
+      <Label layoutX="137.0" layoutY="133.0" text="Introduzca una nueva Region:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="listapais_newregion" layoutX="34.0" layoutY="91.0" onAction="#selectpais" prefHeight="25.0" prefWidth="442.0" />
+      <Label layoutX="181.0" layoutY="47.0" text="Seleccione el Pais: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
