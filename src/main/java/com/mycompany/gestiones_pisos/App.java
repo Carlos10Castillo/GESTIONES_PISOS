@@ -44,7 +44,7 @@ public class App extends Application {
     }
     
     static void loadiniciarlistados() throws IOException, SQLException {
-        String fxml = "view_propietarios_";
+        String fxml = "view_propietarios";
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
 
         // Give the controller access to the main app.

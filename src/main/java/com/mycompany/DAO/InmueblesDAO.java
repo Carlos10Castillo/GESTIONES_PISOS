@@ -55,7 +55,7 @@ public class InmueblesDAO {
     
     public List<Inmuebles> list_inmu_filtrado (Connection conexion) throws SQLException, ClassNotFoundException, IOException{
         List<Inmuebles> listado = new ArrayList<>();
-        String sql = "SELECT a.* FROM gestiones_pisos.inmuebles_propietarios AS b "
+        String sql = "SELECT a.*, b.porcentaje_prop FROM gestiones_pisos.inmuebles_propietarios AS b "
                 + "INNER JOIN inmuebles AS a ON a.idinmueble = b.inmuebles_id WHERE propietarios_id = ?";
         
         PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -80,6 +80,7 @@ public class InmueblesDAO {
             a.setInspeccion(resultado.getString(14));
             a.setPorcentaje_comu(resultado.getInt(15));
             a.setPorcentaje_comu_general(resultado.getInt(16));
+            
             listado.add(a);
         }
         return listado;

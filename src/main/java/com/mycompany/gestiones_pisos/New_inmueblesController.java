@@ -217,7 +217,7 @@ public class New_inmueblesController {
                 AlertaUtil.mostrarError("Rellene el campo de codigo postal");
             }else if(new_alias_inmu.getText().isBlank()){
                 AlertaUtil.mostrarError("Rellene el campo de alias");
-            }else if(new_porcentaje_inmu.getText().isBlank() || Integer.parseInt(new_porcentaje_inmu.getText())>100){
+            }else if(new_porcentaje_inmu.getText().isBlank() || Integer.parseInt(new_porcentaje_inmu.getText())<=100){
                 AlertaUtil.mostrarError("Corrija el campo de porcentaje de propiedad");
             }else if(new_refcatast_inmu.getText().isBlank()){
                 AlertaUtil.mostrarError("Rellene el campo de referencia catastral");

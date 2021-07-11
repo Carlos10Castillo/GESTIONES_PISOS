@@ -125,45 +125,7 @@ public class View_inmueblesController  {
     ObservableList<Tipos_inmuebles> listadotipos;  
     //Fin Variables Temporales
        
-    @FXML
-    public void insertar() throws SQLException{
-        prop = new PropietariosDAO();
-        Propietarios proptemp = new Propietarios();
-        
-        try {
-            con = ConnDAO.conectar();
-            proptemp = new Propietarios(-1, nompro.getText(), apepro.getText(), cifpro.getText(),
-                    dompro.getText(), temp_ciudad_id.getId_ciudad(), Integer.parseInt(codpro.getText()),
-                    Integer.parseInt(telftrabpro.getText()), Integer.parseInt(telfpartpro.getText()),
-                    Integer.parseInt(telfmovilpro.getText()), Integer.parseInt(numfaxpro.getText()),
-                    emailtrabpro.getText(), emailperspro.getText());
-            prop.insertar(proptemp, con);
-            nompro.clear();
-            apepro.clear();
-            cifpro.clear();
-            dompro.clear();
-//            listadociudad_prop.setValue(0);
-            codpro.clear();
-            telftrabpro.clear();
-            telfpartpro.clear();
-            telfmovilpro.clear();
-            numfaxpro.clear();
-            emailtrabpro.clear();
-            emailperspro.clear();
-            AlertaUtil.mostrarInfo("Propietario ingresado");
-            initlist_prop();
-        } catch (ClassNotFoundException ex) {
-            AlertaUtil.mostrarError("1. Fallo en la insercion del propietario\n" + ex.getMessage());
-        } catch (SQLException ex) {
-            AlertaUtil.mostrarError("2. Fallo en la insercion del propietario\n" + ex.getMessage());
-        } catch (IOException ex) {
-            AlertaUtil.mostrarError("3. Fallo en la insercion del propietario\n" + ex.getMessage());
-        }finally{
-            ConnDAO.desconexion(con);
-        }
-    }
-    
-    
+    //Inicializacion de listas
     public void initlist_prop() throws SQLException{
         prop = new PropietariosDAO();
         try {
@@ -230,7 +192,9 @@ public class View_inmueblesController  {
             ConnDAO.desconexion(con);
         }
     }
+    //Fin de inicializacion de listas
     
+    //Carga y seleccion de datos
     private void cargarprop(Propietarios prop) {
         nompro.setText(prop.getNombre_prop());
         apepro.setText(prop.getApellidos_prop());
@@ -290,9 +254,12 @@ public class View_inmueblesController  {
         selinmu = (Inmuebles)lista_inmuebles.getSelectionModel().getSelectedItem();
         cargarinmu(selinmu);
     }
-
-    @FXML
-    public void newInmuebles(ActionEvent event) throws SQLException {
+    //Fin de carga y seleccion de datos
+    
+    //Ventanas emergentes
+        //Inmuebles
+        @FXML
+        public void newInmuebles(ActionEvent event) throws SQLException {
         if(selprop != null){
             try {
                 //cargar ventana
@@ -318,8 +285,8 @@ public class View_inmueblesController  {
         }
     }
     
-    @FXML
-    public void relInmuebles(ActionEvent event) throws SQLException{
+        @FXML
+        public void relInmuebles(ActionEvent event) throws SQLException{
         try {
             //cargar ventana
             FXMLLoader loader = new FXMLLoader(getClass().getResource("relaciones/relacion_inmu_prop.fxml"));
@@ -339,28 +306,31 @@ public class View_inmueblesController  {
             Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+        //Fin inmuebles
     
-//    @FXML
-//    public void modInmuebles(ActionEvent event) throws SQLException{
-//        try {
-//            //cargar ventana
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("inserciones/new_tipos_inmuebles.fxml"));
-//            //referencia al padre
-//            Parent root = loader.load();
-//            //creado del controlador manualmente
-//            New_tipos_inmueblesController controlador = loader.getController();
-//            //creado de escena y estado
-//            Scene scene = new Scene(root);
-//            Stage stage = new Stage();
-//            stage.initModality(Modality.APPLICATION_MODAL);
-//            stage.setScene(scene);
-//            stage.showAndWait();
-//                        
-//            
-//        } catch (IOException ex) {
-//            Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-    
+        //Propietarios
+        @FXML
+        public void newPropietarios(ActionEvent event) throws SQLException {
+            try {
+                //cargar ventana
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("inserciones/new_propietarios.fxml"));
+                //referencia al padre
+                Parent root = loader.load();
+                //creado del controlador manualmente
+                New_propietariosController controlador = loader.getController();
+                //creado de escena y estado
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                controlador.initlist_ciudades();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+                stage.showAndWait();
+
+            } catch (IOException ex) {
+                Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        //Fin Propietarios
+    //Fin de ventanas emergentes
 
 }
