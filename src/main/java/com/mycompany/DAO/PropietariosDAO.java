@@ -5,6 +5,7 @@
  */
 package com.mycompany.DAO;
 
+import com.mycompany.gestiones_pisos.App;
 import com.mycompany.models.Propietarios;
 import java.io.IOException;
 import java.sql.Connection;
@@ -65,4 +66,26 @@ public class PropietariosDAO {
         }
         return listado;
     }
+    
+    public void modificar(Propietarios prop, Connection conexion) throws SQLException, ClassNotFoundException, IOException{
+        String sql = "UPDATE gestiones_pisos.propietarios SET nombre = ?, apellidos = ?, domicilio = ?, ciudad = ?,"
+                + " codigo_postal = ?, telefonodeltrabajo = ?, telefonoparticular = ?, telefonomovil = ?, numerodefax = ?, email_trabajo = ?, email_personal = ?"
+                + "WHERE propietarios.idpropietario = ?";
+        
+        PreparedStatement sentencia = conexion.prepareStatement(sql);
+        sentencia.setString(1, prop.getNombre_prop());
+        sentencia.setString(2, prop.getApellidos_prop());
+        sentencia.setString(3, prop.getDomicilio_prop());
+        sentencia.setInt(4, prop.getCiudad_prop());
+        sentencia.setInt(5, prop.getCod_postal_prop());
+        sentencia.setInt(6, prop.getTelf_trab_prop());
+        sentencia.setInt(7, prop.getTelf_part_prop());
+        sentencia.setInt(8, prop.getTelf_movil_prop());
+        sentencia.setInt(9, prop.getNum_fax_prop());
+        sentencia.setString(10, prop.getEmail_trab_prop());
+        sentencia.setString(11, prop.getEmail_pers_prop());
+        sentencia.setInt(12, App.prop.getIdpropietario());
+        sentencia.executeUpdate();
+    }
+    
 }

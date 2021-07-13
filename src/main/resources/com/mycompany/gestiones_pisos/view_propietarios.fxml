@@ -97,17 +97,12 @@
                               <HBox alignment="CENTER" prefHeight="398.0" prefWidth="536.0" GridPane.columnSpan="4" GridPane.rowIndex="6">
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#newPropietarios" prefHeight="50.0" prefWidth="164.0" text="Nuevo" />
-                                    <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="164.0" text="Modificar">
+                                    <Button mnemonicParsing="false" onAction="#updatePropietarios" prefHeight="50.0" prefWidth="164.0" text="Modificar">
                                        <HBox.margin>
                                           <Insets left="40.0" />
                                        </HBox.margin>
                                     </Button>
                                     <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="164.0" text="Borrar">
-                                       <HBox.margin>
-                                          <Insets left="40.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                    <Button mnemonicParsing="false" onAction="#relInmuebles" prefHeight="50.0" prefWidth="164.0" text="Relaciones">
                                        <HBox.margin>
                                           <Insets left="40.0" />
                                        </HBox.margin>

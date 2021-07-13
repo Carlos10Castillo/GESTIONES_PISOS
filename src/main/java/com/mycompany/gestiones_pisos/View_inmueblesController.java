@@ -330,6 +330,30 @@ public class View_inmueblesController  {
                 Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        @FXML
+        public void updatePropietarios(ActionEvent event) throws SQLException {
+            try {
+                //cargar ventana
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("modificaciones/update_propietarios.fxml"));
+                //referencia al padre
+                Parent root = loader.load();
+                //creado del controlador manualmente
+                Mod_propietariosController controlador = loader.getController();
+                //creado de escena y estado
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                controlador.initlist_ciudades();
+                controlador.cargarprop(App.prop);
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+                stage.showAndWait();
+                initlist_prop();
+
+            } catch (IOException ex) {
+                Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         //Fin Propietarios
     //Fin de ventanas emergentes
 
