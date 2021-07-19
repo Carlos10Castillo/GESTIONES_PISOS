@@ -19,26 +19,26 @@ import java.util.List;
  * @author CARLOS
  */
 public class Tipos_inmueblesDAO {
-    
-        public List<Tipos_inmuebles> listado_tipos (Connection conexion) throws SQLException, ClassNotFoundException, IOException{
+
+    public List<Tipos_inmuebles> listado_tipos(Connection conexion) throws SQLException, ClassNotFoundException, IOException {
         List<Tipos_inmuebles> listado = new ArrayList<>();
         String sql = "SELECT * FROM gestiones_pisos.inmueble_tipo";
-        
+
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         ResultSet resultado = sentencia.executeQuery();
-        
-        while(resultado.next()){
+
+        while (resultado.next()) {
             Tipos_inmuebles a = new Tipos_inmuebles();
             a.setId_tipos_inmuebles(resultado.getInt(1));
             a.setTipos_inmuebles(resultado.getString(2));
             listado.add(a);
         }
-        
-        return listado;        
+
+        return listado;
     }
-    
-    public void insert_regiones(Connection conexion, Tipos_inmuebles tipos) throws SQLException, ClassNotFoundException, IOException{
-        String sql = "INSERT INTO gestiones_pisos.inmueble_tipo (tipos) VALUES (?)";        
+
+    public void insert_regiones(Connection conexion, Tipos_inmuebles tipos) throws SQLException, ClassNotFoundException, IOException {
+        String sql = "INSERT INTO gestiones_pisos.inmueble_tipo (tipos) VALUES (?)";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setString(1, tipos.getTipos_inmuebles());
         sentencia.executeUpdate();

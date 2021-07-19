@@ -5,11 +5,16 @@
  */
 package com.mycompany.models;
 
+import com.mycompany.gestiones_pisos.AlertaUtil;
+import com.mycompany.models.Inmuebles;
+import com.mycompany.models.Propietarios;
+
 /**
  *
  * @author CARLOS
  */
-public class Inmuebles {
+public class Inmuebles implements interfaces.Comprobable {
+
     private int id_inmueble;
     private int inmueble_tipo_id;
     private String destino;
@@ -17,6 +22,7 @@ public class Inmuebles {
     private int ciudad;
     private int cod_postal;
     private String alias;
+    private int porcentaje;
     private String ref_catastral;
     private String reg_propiedad;
     private String tomo;
@@ -27,10 +33,12 @@ public class Inmuebles {
     private int porcentaje_comu;
     private int porcentaje_comu_general;
 
+    
+
     public Inmuebles() {
     }
 
-    public Inmuebles(int id_inmueble, int inmueble_tipo_id, String destino, String domicilio, int ciudad, int cod_postal, String alias, String ref_catastral, String reg_propiedad, String tomo, String libro, String folio, String finca, String inspeccion, int porcentaje_comu, int porcentaje_comu_general) {
+    public Inmuebles(int id_inmueble, int inmueble_tipo_id, String destino, String domicilio, int ciudad, int cod_postal, String alias, int porcentaje, String ref_catastral, String reg_propiedad, String tomo, String libro, String folio, String finca, String inspeccion, int porcentaje_comu, int porcentaje_comu_general) {
         this.id_inmueble = id_inmueble;
         this.inmueble_tipo_id = inmueble_tipo_id;
         this.destino = destino;
@@ -38,6 +46,7 @@ public class Inmuebles {
         this.ciudad = ciudad;
         this.cod_postal = cod_postal;
         this.alias = alias;
+        this.porcentaje = porcentaje;
         this.ref_catastral = ref_catastral;
         this.reg_propiedad = reg_propiedad;
         this.tomo = tomo;
@@ -48,7 +57,6 @@ public class Inmuebles {
         this.porcentaje_comu = porcentaje_comu;
         this.porcentaje_comu_general = porcentaje_comu_general;
     }
-    
 
     /**
      * @return the id_inmueble
@@ -100,6 +108,13 @@ public class Inmuebles {
     }
 
     /**
+     * @return the procentaje
+     */
+    public int getProcentaje() {
+        return porcentaje;
+    }
+
+    /**
      * @return the ref_catastral
      */
     public String getRef_catastral() {
@@ -140,7 +155,7 @@ public class Inmuebles {
     public String getFinca() {
         return finca;
     }
-    
+
     /**
      * @return the inspeccion
      */
@@ -211,6 +226,12 @@ public class Inmuebles {
         this.alias = alias;
     }
 
+    /**
+     * @param procentaje the procentaje to set
+     */
+    public void setProcentaje(int procentaje) {
+        this.porcentaje = procentaje;
+    }
 
     /**
      * @param ref_catastral the ref_catastral to set
@@ -253,7 +274,7 @@ public class Inmuebles {
     public void setFinca(String finca) {
         this.finca = finca;
     }
-    
+
     /**
      * @param inspeccion the inspeccion to set
      */
@@ -284,8 +305,29 @@ public class Inmuebles {
         sb.append(" alias=").append(alias);
         return sb.toString();
     }
+    
+    @Override
+    public boolean comprobar_inmuebles(Inmuebles a) {
+        Boolean comp = false;
+        if (a.getDomicilio().isBlank()) {
+            AlertaUtil.mostrarWarning("Revise la informacion de los campos");
+        } else if (a.getCod_postal() <= 0) {
+            AlertaUtil.mostrarWarning("Revise la informacion de los campos");
+        } else if (a.getRef_catastral().isBlank()) {
+            AlertaUtil.mostrarWarning("Revise la informacion de los campos");
+        } else if (a.getPorcentaje_comu() <= 0) {
+            AlertaUtil.mostrarWarning("Revise la informacion de los campos");
+        } else if (a.getAlias().isBlank()){
+            AlertaUtil.mostrarWarning("Revise la informacion de los campos");
+        } else{
+            comp = true;
+        }
+        return comp;
+    }
 
-    
-    
-    
+    @Override
+    public boolean comprobar_propietarios(Propietarios a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

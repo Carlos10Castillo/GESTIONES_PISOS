@@ -39,14 +39,13 @@ import javafx.stage.Stage;
  *
  * @author CARLOS
  */
-public class View_inmueblesController  {
-    
+public class View_inmueblesController {
+
     //Desplegable de seleccion de propietarios 
     @FXML
     private ComboBox listaprop;
     //Fin de Desplegable
-    
-    
+
     //Campos de la pestaña Datos personales
     @FXML
     private TextField nompro;
@@ -71,10 +70,9 @@ public class View_inmueblesController  {
     @FXML
     private TextField emailtrabpro;
     @FXML
-    private TextField emailperspro;  
+    private TextField emailperspro;
     //Fin de Campos
-    
-    
+
     //Campos de la pestaña Inmuebles
     @FXML
     private ListView lista_inmuebles;
@@ -111,7 +109,7 @@ public class View_inmueblesController  {
     @FXML
     private TextField porcencomugeneral_inmu;
     //Fin de Campos
-    
+
     //Variables Temporales
     private static PropietariosDAO prop;
     private static InmueblesDAO inmu;
@@ -120,13 +118,12 @@ public class View_inmueblesController  {
     private static Connection con;
     private Propietarios selprop;
     private Inmuebles selinmu;
-    private Ciudades temp_ciudad_id = new Ciudades();
-    ObservableList<Ciudades> listadopais;    
-    ObservableList<Tipos_inmuebles> listadotipos;  
+    ObservableList<Ciudades> listadopais;
+    ObservableList<Tipos_inmuebles> listadotipos;
     //Fin Variables Temporales
-       
+
     //Inicializacion de listas
-    public void initlist_prop() throws SQLException{
+    public void initlist_prop() throws SQLException {
         prop = new PropietariosDAO();
         try {
             con = ConnDAO.conectar();
@@ -138,12 +135,12 @@ public class View_inmueblesController  {
             AlertaUtil.mostrarError("Error cargando los datos de la aplicación 2\n" + ex.getMessage());
         } catch (IOException ex) {
             AlertaUtil.mostrarError("Error cargando los datos de la aplicación 3\n" + ex.getMessage());
-        }finally{
+        } finally {
             ConnDAO.desconexion(con);
         }
     }
-    
-    public void initlist_inmu() throws SQLException{
+
+    public void initlist_inmu() throws SQLException {
         inmu = new InmueblesDAO();
         lista_inmuebles.getItems().clear();
         try {
@@ -156,12 +153,12 @@ public class View_inmueblesController  {
             AlertaUtil.mostrarError("Error cargando los datos de la aplicación 2\n" + ex.getMessage());
         } catch (IOException ex) {
             AlertaUtil.mostrarError("Error cargando los datos de la aplicación 3\n" + ex.getMessage());
-        }finally{
+        } finally {
             ConnDAO.desconexion(con);
         }
     }
-    
-    public void initlist_ciudades() throws SQLException{
+
+    public void initlist_ciudades() throws SQLException {
         tempdao_ciudades = new CiudadesDAO();
         try {
             con = ConnDAO.conectar();
@@ -172,12 +169,12 @@ public class View_inmueblesController  {
             AlertaUtil.mostrarError("Error cargando los datos de la aplicación 2\n" + ex.getMessage());
         } catch (IOException ex) {
             AlertaUtil.mostrarError("Error cargando los datos de la aplicación 3\n" + ex.getMessage());
-        }finally{
+        } finally {
             ConnDAO.desconexion(con);
         }
     }
-    
-    public void initlist_tipos() throws SQLException{
+
+    public void initlist_tipos() throws SQLException {
         tempdao_tipos = new Tipos_inmueblesDAO();
         try {
             con = ConnDAO.conectar();
@@ -188,20 +185,20 @@ public class View_inmueblesController  {
             AlertaUtil.mostrarError("Error cargando los datos de la aplicación 2\n" + ex.getMessage());
         } catch (IOException ex) {
             AlertaUtil.mostrarError("Error cargando los datos de la aplicación 3\n" + ex.getMessage());
-        }finally{
+        } finally {
             ConnDAO.desconexion(con);
         }
     }
     //Fin de inicializacion de listas
-    
+
     //Carga y seleccion de datos
     private void cargarprop(Propietarios prop) {
         nompro.setText(prop.getNombre_prop());
         apepro.setText(prop.getApellidos_prop());
         cifpro.setText(prop.getCif_prop());
         dompro.setText(prop.getDomicilio_prop());
-        for(int i = 0; i < listadopais.size(); i++){
-            if(selprop.getCiudad_prop() == listadopais.get(i).getId_ciudad()){
+        for (int i = 0; i < listadopais.size(); i++) {
+            if (selprop.getCiudad_prop() == listadopais.get(i).getId_ciudad()) {
                 ciudad_prop.setText(listadopais.get(i).getCiudad());
             }
         }
@@ -213,31 +210,32 @@ public class View_inmueblesController  {
         emailtrabpro.setText(prop.getEmail_trab_prop());
         emailperspro.setText(prop.getEmail_pers_prop());
     }
-    
+
     @FXML
     public void seleccion_prop(Event event) throws SQLException {
-        selprop = (Propietarios)listaprop.getSelectionModel().getSelectedItem();
-        
+        selprop = (Propietarios) listaprop.getSelectionModel().getSelectedItem();
+
         cargarprop(selprop);
         App.setPropietario(selprop);
         initlist_inmu();
     }
-    
+
     private void cargarinmu(Inmuebles inmu) {
-        for(int i = 0; i < listadotipos.size(); i++){
-            if(selinmu.getInmueble_tipo_id()== listadotipos.get(i).getId_tipos_inmuebles()){
+        for (int i = 0; i < listadotipos.size(); i++) {
+            if (selinmu.getInmueble_tipo_id() == listadotipos.get(i).getId_tipos_inmuebles()) {
                 tipo_inmu.setText(listadotipos.get(i).getTipos_inmuebles());
             }
         }
         destino_inmu.setText(inmu.getDestino());
         domicilio_imnu.setText(inmu.getDomicilio());
-        for(int i = 0; i < listadopais.size(); i++){
-            if(selprop.getCiudad_prop() == listadopais.get(i).getId_ciudad()){
+        for (int i = 0; i < listadopais.size(); i++) {
+            if (selprop.getCiudad_prop() == listadopais.get(i).getId_ciudad()) {
                 ciudad_inmu.setText(listadopais.get(i).getCiudad());
             }
         }
         codposta_inmu.setText(String.valueOf(inmu.getCod_postal()));
         alias_inmu.setText(inmu.getAlias());
+        porcentaje_inmu.setText(String.valueOf(inmu.getProcentaje()));
         refcatast_inmu.setText(inmu.getRef_catastral());
         regpropiedad_inmu.setText(inmu.getReg_propiedad());
         tomo_inmu.setText(inmu.getTomo());
@@ -248,66 +246,95 @@ public class View_inmueblesController  {
         porcencomu_inmu.setText(String.valueOf(inmu.getPorcentaje_comu()));
         porcencomugeneral_inmu.setText(String.valueOf(inmu.getPorcentaje_comu_general()));
     }
-    
+
     @FXML
     public void seleccion_inmu(Event event) throws SQLException {
-        selinmu = (Inmuebles)lista_inmuebles.getSelectionModel().getSelectedItem();
+        selinmu = (Inmuebles) lista_inmuebles.getSelectionModel().getSelectedItem();
         cargarinmu(selinmu);
+        App.setInmueble(selinmu);
     }
     //Fin de carga y seleccion de datos
-    
+
     //Ventanas emergentes
         //Inmuebles
         @FXML
         public void newInmuebles(ActionEvent event) throws SQLException {
-        if(selprop != null){
+            if (selprop != null) {
+                try {
+                    //cargar ventana
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("inserciones/new_inmuebles.fxml"));
+                    //referencia al padre
+                    Parent root = loader.load();
+                    //creado del controlador manualmente
+                    New_inmueblesController controlador = loader.getController();
+                    //creado de escena y estado
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+                    controlador.initlist_ciudades();
+                    controlador.initlist_tipos();
+                    stage.initModality(Modality.APPLICATION_MODAL);
+                    stage.setScene(scene);
+                    stage.showAndWait();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else if (selprop == null) {
+                AlertaUtil.mostrarWarning("Seleccione un Propietario");
+            }
+        }
+
+         @FXML
+        public void updateInmuebles(ActionEvent event) throws SQLException {
+            if (selinmu != null) {
+                try {
+                    //cargar ventana
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("modificaciones/update_inmuebles.fxml"));
+                    //referencia al padre
+                    Parent root = loader.load();
+                    //creado del controlador manualmente
+                    Mod_inmueblesController controlador = loader.getController();
+                    //creado de escena y estado
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+                    controlador.initlist_ciudades();
+                    controlador.initlist_tipos();
+                    controlador.cargarinmu(App.inmu);
+                    stage.initModality(Modality.APPLICATION_MODAL);
+                    stage.setScene(scene);
+                    stage.showAndWait();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else if (selinmu == null) {
+                AlertaUtil.mostrarWarning("Seleccione un Inmueble");
+            }
+        }
+
+        @FXML
+        public void relInmuebles(ActionEvent event) throws SQLException {
             try {
                 //cargar ventana
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("inserciones/new_inmuebles.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("relaciones/relacion_inmu_prop.fxml"));
                 //referencia al padre
                 Parent root = loader.load();
                 //creado del controlador manualmente
-                New_inmueblesController controlador = loader.getController();
+                Relacion_inmu_propController controlador = loader.getController();
                 //creado de escena y estado
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
-                controlador.initlist_ciudades();
-                controlador.initlist_tipos();
+                controlador.initlist_inmu();
+                controlador.initlist_prop();
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setScene(scene);
                 stage.showAndWait();
-
             } catch (IOException ex) {
                 Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(selprop == null){
-            AlertaUtil.mostrarWarning("Seleccione un Propietario");
         }
-    }
-    
-        @FXML
-        public void relInmuebles(ActionEvent event) throws SQLException{
-        try {
-            //cargar ventana
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("relaciones/relacion_inmu_prop.fxml"));
-            //referencia al padre
-            Parent root = loader.load();
-            //creado del controlador manualmente
-            Relacion_inmu_propController controlador = loader.getController();
-            //creado de escena y estado
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            controlador.initlist_inmu();
-            controlador.initlist_prop();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setScene(scene);
-            stage.showAndWait();
-        } catch (IOException ex) {
-            Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
         //Fin inmuebles
-    
+
         //Propietarios
         @FXML
         public void newPropietarios(ActionEvent event) throws SQLException {
@@ -330,7 +357,7 @@ public class View_inmueblesController  {
                 Logger.getLogger(View_inmueblesController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
         @FXML
         public void updatePropietarios(ActionEvent event) throws SQLException {
             try {

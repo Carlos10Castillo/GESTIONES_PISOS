@@ -152,7 +152,6 @@ public class Mod_propietariosController {
         Boolean f = true;
         Boolean g = true;
 
-
         try {
             con = ConnDAO.conectar();
 

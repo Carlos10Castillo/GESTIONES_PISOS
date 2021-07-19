@@ -227,7 +227,7 @@
                                     <HBox alignment="CENTER" prefHeight="398.0" prefWidth="536.0" GridPane.columnSpan="2" GridPane.rowIndex="8">
                                        <children>
                                           <Button mnemonicParsing="false" onAction="#newInmuebles" prefHeight="39.0" prefWidth="121.0" text="Nuevo" />
-                                          <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Modificar">
+                                          <Button mnemonicParsing="false" onAction="#updateInmuebles" prefHeight="39.0" prefWidth="121.0" text="Modificar">
                                              <HBox.margin>
                                                 <Insets left="40.0" />
                                              </HBox.margin>

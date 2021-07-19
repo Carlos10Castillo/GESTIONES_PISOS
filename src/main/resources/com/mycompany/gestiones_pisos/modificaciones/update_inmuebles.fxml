@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1419.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestiones_pisos.Mod_inmueblesController">
+   <center>
+      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="662.0" prefWidth="1308.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Label" />
+            <Label text="Tipo del inmueble" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Destino del inmueble" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Domicilio" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Ciudad" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Codigo Postal" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Alias del Inmueble" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="83.0" prefWidth="938.0" style="-fx-background-color: AED6F1;" text="REGISTRO DE LA PROPIEDAD" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label text="Referencia Catastral" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="Registro de la Propiedad" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="Tomo" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Libro" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label text="Folio" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label text="Finca" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" prefHeight="83.0" prefWidth="1639.0" style="-fx-background-color: AED6F1;" text="DATOS DEL INMUEBLE" GridPane.columnSpan="2" />
+            <Label text="Inspeccion" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Label text="Porcentaje de la Comunidad" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label text="Porcentaje de la Comunidad General" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <TextField fx:id="mod_destino_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="mod_domicilio_imnu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="mod_codposta_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="mod_alias_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="mod_refcatast_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="mod_regpropiedad_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="mod_tomo_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="mod_libro_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="mod_folio_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <TextField fx:id="mod_finca_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <TextField fx:id="mod_inspeccion_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <TextField fx:id="mod_porcencomu_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <TextField fx:id="mod_porcencomugeneral_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <ComboBox fx:id="mod_lista_tipos" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="mod_lista_ciudades" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <HBox alignment="CENTER" prefHeight="398.0" prefWidth="536.0" GridPane.columnSpan="2" GridPane.rowIndex="8">
+               <children>
+                  <Button fx:id="mod_guardar_inmu" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Modificar">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TextField fx:id="mod_porcentaje_inmu" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Porcentaje Propiedad" GridPane.halignment="LEFT" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="153.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="846.0" minWidth="10.0" prefWidth="504.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1018.0" minWidth="10.0" prefWidth="229.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="718.0" minWidth="0.0" prefWidth="477.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="82.33334350585938" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </center>
+   <top>
+      <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" prefWidth="1419.0" style="-fx-background-color: AED6F1;" text="MODIFICACION DE INMUEBLES" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>

@@ -1,5 +1,6 @@
 package com.mycompany.gestiones_pisos;
 
+import com.mycompany.models.Inmuebles;
 import com.mycompany.models.Propietarios;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,12 +17,11 @@ public class App extends Application {
 
     private static Scene scene;
     public static Propietarios prop = new Propietarios();
-    
-    
+    public static Inmuebles inmu = new Inmuebles();
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("panel_control"), 1920,1020);
+        scene = new Scene(loadFXML("panel_control"), 1920, 1020);
         stage.setScene(scene);
         stage.show();
     }
@@ -38,11 +38,15 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-    
-    static void setPropietario(Propietarios p) {       
+
+    static void setPropietario(Propietarios p) {
         prop = p;
     }
-    
+
+    static void setInmueble(Inmuebles i) {
+        inmu = i;
+    }
+
     static void loadiniciarlistados() throws IOException, SQLException {
         String fxml = "view_propietarios";
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
@@ -50,13 +54,12 @@ public class App extends Application {
         // Give the controller access to the main app.
         View_inmueblesController controller = new View_inmueblesController();
         fxmlLoader.setController(controller);
-        
+
         scene.setRoot(fxmlLoader.load());
         controller.initlist_prop();
         controller.initlist_ciudades();
         controller.initlist_inmu();
         controller.initlist_tipos();
     }
-    
 
 }

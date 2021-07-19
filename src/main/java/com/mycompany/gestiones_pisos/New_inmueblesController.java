@@ -205,6 +205,7 @@ public class New_inmueblesController {
             temp_inmuebles = new Inmuebles(-1, temp_tipos.getId_tipos_inmuebles(),
                 new_destino_inmu.getText(), new_domicilio_imnu.getText(), temp_ciudad.getId_ciudad(),
                 Integer.parseInt(new_codposta_inmu.getText()), new_alias_inmu.getText(),
+                -1,
                 new_refcatast_inmu.getText(), new_regpropiedad_inmu.getText(), new_tomo_inmu.getText(), new_libro_inmu.getText(), 
                 new_folio_inmu.getText(), new_finca_inmu.getText(), new_inspeccion_inmu.getText(),
                 Integer.parseInt(new_porcencomu_inmu.getText()), Integer.parseInt(new_porcencomugeneral_inmu.getText()));
